@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-earth-beige text-earth-bark font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-earth-bark;
+  }
+}
+
+@layer components {
+  /* Button Styles */
+  .btn-primary {
+    @apply px-6 py-3 bg-earth-gradient text-white font-semibold rounded-lg shadow-earth 
+           hover:shadow-earth-lg transform hover:-translate-y-0.5 transition-all duration-300;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-white text-earth-forest font-semibold rounded-lg border-2 border-earth-forest
+           hover:bg-earth-forest hover:text-white transition-all duration-300;
+  }
+  
+  .btn-pulse {
+    @apply animate-pulse-slow;
+  }
+  
+  /* Card Styles */
+  .card {
+    @apply bg-white rounded-lg shadow-earth hover:shadow-earth-lg 
+           transform hover:-translate-y-1 transition-all duration-300;
+  }
+  
+  .card-earth {
+    @apply bg-gradient-to-br from-earth-beige to-earth-sand rounded-lg shadow-earth;
+  }
+  
+  /* Input Styles */
+  .input-earth {
+    @apply w-full px-4 py-3 rounded-lg border-2 border-earth-tan 
+           focus:border-earth-forest focus:ring-2 focus:ring-earth-forest/20 
+           outline-none transition-all duration-200;
+  }
+  
+  /* Section Styles */
+  .section-padding {
+    @apply py-16 px-4 md:px-8 lg:px-16;
+  }
+  
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-earth-forest to-earth-brown bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .backdrop-blur-earth {
+    backdrop-filter: blur(10px);
+    background-color: rgba(245, 245, 220, 0.9);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F5DC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B4513;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2D5016;
+}
+
+/* Leaflet map fixes */
+.leaflet-container {
+  @apply rounded-lg shadow-earth;
+}
